@@ -1,0 +1,333 @@
+/*
+	Workshop-specific styles, layered on top of the Stellar base (main.css).
+	Schedule, speakers and location follow the layout of the hugo-conference theme.
+*/
+
+:root {
+	--accent: #8cc9f0;
+	--accent-dark: #3b7fb0;
+	--keynote: #f6e7c8;
+	--session: #e3eef7;
+	--break: #ededed;
+	--line: #e3e3e3;
+	--text-muted: #8a8a8a;
+}
+
+/* Location */
+
+.location-address {
+	margin-bottom: 1em;
+}
+
+.location-map {
+	display: block;
+	width: 100%;
+	height: 380px;
+	border: 0;
+	border-radius: 0.25em;
+}
+
+/* Distinguished lecture */
+
+#distinguished .lecture {
+	display: flex;
+	gap: 2.5em;
+	align-items: flex-start;
+	padding: 2em;
+	border-radius: 0.5em;
+	background: linear-gradient(135deg, #fbf3e2 0%, #eef5fb 100%);
+	border-left: 6px solid #d9a441;
+}
+
+#distinguished .lecture-photo {
+	flex: 0 0 13em;
+	width: 13em;
+	height: 13em;
+	border-radius: 50%;
+	object-fit: cover;
+	box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.15);
+}
+
+#distinguished .lecture-label {
+	display: inline-block;
+	margin-bottom: 0.75em;
+	padding: 0.2em 0.8em;
+	border-radius: 1em;
+	background: #d9a441;
+	color: #ffffff;
+	font-size: 0.75em;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+#distinguished .lecture-title {
+	margin-bottom: 0.4em;
+	font-size: 1.6em;
+	line-height: 1.3;
+}
+
+#distinguished .lecture-speaker {
+	margin-bottom: 0.25em;
+	font-size: 1.15em;
+	font-weight: 700;
+	color: #4a4a4a;
+}
+
+#distinguished .lecture-meta {
+	margin-bottom: 1.25em;
+	color: var(--text-muted);
+}
+
+#distinguished .lecture h4 {
+	margin: 1em 0 0.25em 0;
+	font-size: 0.9em;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+#distinguished .lecture p {
+	margin-bottom: 0.75em;
+}
+
+/* Schedule */
+
+.schedule-note {
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+.schedule-tbl table {
+	margin-top: 1em;
+}
+
+.schedule-tbl th {
+	padding: 0.5em 0.75em;
+	color: #4a4a4a;
+	text-align: left;
+}
+
+.schedule-tbl tbody tr {
+	border-color: var(--line);
+	background-color: #ffffff;
+}
+
+.schedule-tbl td {
+	padding: 1em 0.75em;
+	vertical-align: top;
+}
+
+.schedule-tbl .schedule-time {
+	width: 9em;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.schedule-tbl .schedule-slot {
+	width: 15em;
+}
+
+.schedule-tbl .slot-kind {
+	display: block;
+	font-size: 0.75em;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: var(--text-muted);
+}
+
+.schedule-tbl .slot-name {
+	display: block;
+	font-weight: 700;
+	color: #4a4a4a;
+}
+
+.schedule-tbl .slot-chair {
+	display: block;
+	font-size: 0.85em;
+	color: var(--text-muted);
+}
+
+.schedule-tbl .speaker-photo {
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin-right: 0.75em;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.schedule-tbl tr.schedule-break {
+	background-color: var(--break);
+}
+
+.schedule-tbl tr.schedule-keynote {
+	background-color: var(--keynote);
+}
+
+.schedule-tbl tr.schedule-session {
+	background-color: var(--session);
+}
+
+/* Papers inside a session slot */
+
+.paper-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.paper-list li {
+	padding: 0.6em 0 0.6em 0;
+	border-bottom: 1px dashed #c9d6e2;
+}
+
+.paper-list li:first-child {
+	padding-top: 0;
+}
+
+.paper-list li:last-child {
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+
+.paper-time {
+	display: inline-block;
+	min-width: 3.2em;
+	margin-right: 0.5em;
+	font-size: 0.85em;
+	font-weight: 700;
+	color: var(--accent-dark);
+}
+
+.paper-title {
+	font-weight: 700;
+	color: #4a4a4a;
+}
+
+.paper-authors {
+	display: block;
+	font-size: 0.9em;
+}
+
+.paper-authors .presenter {
+	text-decoration: underline;
+}
+
+.paper-links {
+	font-size: 0.85em;
+}
+
+/* Speakers */
+
+.speakers-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.speakers-item {
+	position: relative;
+	min-height: 160px;
+	margin-bottom: 2em;
+	padding: 0 0 2em 170px;
+	border-bottom: 1px dashed var(--line);
+}
+
+.speakers-item:last-child {
+	border-bottom: 0;
+	margin-bottom: 0;
+}
+
+.speakers-item .speaker-photo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.speakers-item .speech-time {
+	display: inline-block;
+	margin-bottom: 0.4em;
+	padding: 0.1em 0.7em;
+	border-radius: 1em;
+	background-color: var(--session);
+	color: var(--accent-dark);
+	font-size: 0.8em;
+	font-weight: 700;
+}
+
+.speakers-item .speech-title {
+	margin-bottom: 0.3em;
+	font-size: 1.3em;
+}
+
+.speakers-item .speakers-name {
+	margin-bottom: 0.6em;
+	font-size: 1em;
+	color: var(--text-muted);
+}
+
+.speakers-item .speakers-bio {
+	margin-bottom: 0;
+}
+
+/* Small screens */
+
+@media screen and (max-width: 736px) {
+
+	#distinguished .lecture {
+		flex-direction: column;
+		align-items: center;
+		padding: 1.5em;
+		gap: 1.5em;
+	}
+
+	#distinguished .lecture-photo {
+		flex-basis: auto;
+		width: 9em;
+		height: 9em;
+	}
+
+	.schedule-tbl thead {
+		display: none;
+	}
+
+	.schedule-tbl tr,
+	.schedule-tbl td {
+		display: block;
+		width: auto !important;
+	}
+
+	.schedule-tbl td {
+		padding: 0.4em 0.75em;
+	}
+
+	.schedule-tbl td.schedule-time {
+		padding-top: 1em;
+	}
+
+	.schedule-tbl td:last-child {
+		padding-bottom: 1em;
+	}
+
+	.speakers-item {
+		padding-left: 0;
+		min-height: 0;
+	}
+
+	.speakers-item .speaker-photo {
+		position: static;
+		display: block;
+		width: 100px;
+		height: 100px;
+		margin-bottom: 1em;
+	}
+
+	.location-map {
+		height: 280px;
+	}
+}
