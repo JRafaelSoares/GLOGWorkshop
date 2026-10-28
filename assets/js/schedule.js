@@ -44,6 +44,13 @@
 			+ '</li>';
 	}
 
+	function breakDetails(slot) {
+		if (!slot.location && !slot.note)
+			return '&ndash;';
+		return (slot.location ? '<span class="break-location">' + esc(slot.location) + '</span>' : '')
+			+ (slot.note ? '<span class="break-note">' + esc(slot.note) + '</span>' : '');
+	}
+
 	function row(slot) {
 		var time = '<td class="schedule-time">' + esc(slot.time) + '</td>';
 
@@ -52,8 +59,7 @@
 			case 'session':
 				return '<tr class="schedule-session">' + time
 					+ '<td class="schedule-slot">'
-					+ '<span class="slot-kind">' + esc(slot.title) + '</span>'
-					+ '<span class="slot-name">' + esc(slot.topic) + '</span>'
+					+ '<span class="slot-name">' + esc(slot.title) + '</span>'
 					+ (slot.chair ? '<span class="slot-chair">Chair: ' + esc(slot.chair) + '</span>' : '')
 					+ '</td>'
 					+ '<td class="schedule-description"><ul class="paper-list">'
@@ -72,7 +78,7 @@
 			default:
 				return '<tr class="schedule-break">' + time
 					+ '<td class="schedule-slot"><span class="slot-name">' + esc(slot.name) + '</span></td>'
-					+ '<td class="schedule-description">&ndash;</td></tr>';
+					+ '<td class="schedule-description">' + breakDetails(slot) + '</td></tr>';
 		}
 	}
 

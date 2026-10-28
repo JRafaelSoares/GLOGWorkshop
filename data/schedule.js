@@ -3,8 +3,8 @@
 	assets/js/schedule.js turns it into HTML.
 
 	Each slot has a "type":
-	  - "break":         breaks, lunch, etc.        Fields: time, name
-	  - "session":       a paper session.           Fields: time, title, topic, chair, talks
+	  - "break":         breaks, lunch, dinner etc. Fields: time, name, location (optional), note (optional)
+	  - "session":       a paper session.           Fields: time, title, chair, talks
 	  - "distinguished": the distinguished lecture. Fields: time, speaker, title, photo, link
 
 	Each talk in a session has:
@@ -29,7 +29,6 @@ const SCHEDULE = [
 		type: "session",
 		time: "09:30 – 11:00",
 		title: "Paper Session 1",
-		topic: "Session Topic A",
 		chair: "Session Chair",
 		talks: [
 			{ time: "09:30", title: "StageRun: An Execution-Centric Runtime for In-Network Security \n" +
@@ -91,7 +90,6 @@ const SCHEDULE = [
 		type: "session",
 		time: "14:30 – 16:00",
 		title: "Paper Session 2",
-		topic: "Session Topic B",
 		chair: "Session Chair",
 		talks: [
 			{ time: "14:30", title: "\"Title TBA\"", authors: ["José Orlando Pereira"], presenter: "José Orlando Pereira", invited: true, link: "#invited" },
@@ -111,7 +109,6 @@ const SCHEDULE = [
 		type: "session",
 		time: "16:30 – 18:00",
 		title: "Paper Session 3",
-		topic: "Session Topic C",
 		chair: "Session Chair",
 		talks: [
 			{ time: "16:30", title: "\"Title TBA\"", authors: ["Nuno Preguiça"], presenter: "Nuno Preguiça", invited: true, link: "#invited" },
@@ -140,5 +137,12 @@ const SCHEDULE = [
 			{ time: "17:10", title: "TBA", authors: ["Rodrigo Rodrigues"], presenter: "Rodrigo Rodrigues", photo: "", abstract: "" },
 			{ time: "17:30", title: "TBA", authors: ["TBA"], presenter: "TBA", photo: "", abstract: "" }
 		]
+	},
+	{
+		type: "break",
+		time: "20:00",
+		name: "Dinner",
+		location: "Location TBA",
+		note: "Dinner is not included: each participant pays for their own meal."
 	}
 ];

@@ -208,6 +208,18 @@ a:hover {
 	color: #b5832a;
 }
 
+.break-location {
+	display: block;
+	font-weight: 700;
+	color: #4a4a4a;
+}
+
+.break-note {
+	display: block;
+	font-size: 0.9em;
+	font-style: italic;
+}
+
 /* Papers inside a session slot */
 
 .paper-list {
