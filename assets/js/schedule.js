@@ -34,10 +34,17 @@
 			+ (talk.paper ? '<a href="' + esc(talk.paper) + '" class="paper-link icon fa-file-text-o" title="Read the paper" target="_blank" rel="noopener"><span class="label">Paper</span></a>' : '');
 	}
 
+	function projectBadge(talk) {
+		return talk.project ? '<span class="paper-badge paper-badge-project">' + esc(talk.project) + '</span>' : '';
+	}
+
 	function talkItem(talk) {
-		return '<li' + (talk.invited ? ' class="paper-invited"' : '') + '>'
+		var classes = (talk.invited ? ' paper-invited' : '') + (talk.project ? ' paper-project' : '');
+
+		return '<li' + (classes ? ' class="' + classes.trim() + '"' : '') + '>'
 			+ '<span class="paper-time">' + esc(talk.time) + '</span>'
 			+ (talk.invited ? '<span class="paper-badge">Invited Speaker</span>' : '')
+			+ projectBadge(talk)
 			+ title(talk.title, talk.link)
 			+ venue(talk)
 			+ '<span class="paper-authors">' + authors(talk) + '</span>'
@@ -86,6 +93,7 @@
 		return '<li class="speakers-item">'
 			+ '<img class="speaker-photo" src="' + esc(talk.photo || 'images/speakers/placeholder.svg') + '" alt="' + esc(talk.presenter) + '" />'
 			+ '<span class="speech-time">' + esc(session.title) + ' &middot; ' + esc(talk.time) + '</span>'
+			+ projectBadge(talk)
 			+ '<h3 class="speech-title">' + esc(talk.title) + venue(talk) + '</h3>'
 			+ '<p class="speakers-name">' + authors(talk) + '</p>'
 			+ (talk.abstract ? '<p class="speakers-bio">' + esc(talk.abstract) + '</p>' : '')

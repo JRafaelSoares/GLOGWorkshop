@@ -12,6 +12,8 @@
 	  - authors:   list of author names
 	  - presenter: the author who presents (underlined on the page), optional
 	  - invited:   true for an invited speaker (orange highlight + badge), optional
+	  - project:   name of a project the talk belongs to (e.g. "GLOG Project"); shows a green
+	               badge and highlight, optional
 	  - link:      URL the title links to (e.g. the paper PDF or "#invited"), optional
 	  - venue:     where the paper was published (e.g. "EuroSys 2026"), optional
 	  - paper:     URL of the paper; shows a paper icon next to the venue, optional
@@ -106,23 +108,7 @@ const SCHEDULE = [
 			{ time: "14:50", title: "FUR: Fast and Unlimited Reads on Persistent Memory Transactions", authors: ["João Barreto", "Daniel Castro", "Paolo Romano", "Alexandro Baldassin"], presenter: "Daniel Castro", venue: "EuroSys'26", paper: "https://dl.acm.org/doi/10.1145/3767295.3769343", photo: "images/speakers/dcastro.jpg", abstract: "Despite the recent improvements in supporting Persistent Hardware Transactions (PHTs) on emerging persistent memories (PM), they have largely overlooked the poor performance of Read-Only (RO) transactions, which suffer from two crucial bottlenecks: i) the considerable post-commit delays required to ensure consistency with concurrent update transactions; and ii) the well-known tight read capacity limits of the commercially available HTM implementations.\n" +
 					"We propose FUR, a new design for PHT that eliminates the two most crucial bottlenecks that hinder RO transactions in state-of-the-art PHT. At its core, FUR exploits advanced instructions that some contemporary HTMs provide to suspend (and resume) transactional access tracking.\n" +
 					"With the exception of workloads comprised of 100% update transactions, our experimental evaluation with an IBM POWER9 system using the TPC-C benchmark shows that FUR can outperform the state of the art designs for persistent hardware (SPHT) and software memory transactions (Pisces or SpecPMT-based) by up to 6.17×." },
-			{ time: "15:10", title: "TBA", authors: ["TBA"], presenter: "TBA", photo: "", abstract: "" },
-			{ time: "15:30", title: "TBA", authors: ["TBA"], presenter: "TBA", photo: "", abstract: "" }
-		]
-	},
-	{
-		type: "break",
-		time: "16:00 – 16:30",
-		name: "Coffee break"
-	},
-	{
-		type: "session",
-		time: "16:30 – 18:00",
-		title: "Paper Session 3",
-		chair: "Session Chair",
-		talks: [
-			{ time: "16:30", title: "\"Title TBA\"", authors: ["Nuno Preguiça"], presenter: "Nuno Preguiça", invited: true, link: "#invited" },
-			{ time: "16:50", title: "Linearizable Shared Log API Considered Harmful", authors: ["Yu-Ju Huang", "Shubham Chaudhary", "Rafael Soares", "Shir Cohen Gahtan", "Sabrina Johnson", "Arnav Kaul", "Lorenzo Alvisi", "Luis Rodrigues", "Robbert van Renesse"], presenter: "Rafael Soares", venue: "EuroSys'27", paper: "", photo: "", abstract: "Shared logs are a core building block for distributed systems,\n" +
+			{ time: "15:10", title: "Linearizable Shared Log API Considered Harmful", authors: ["Yu-Ju Huang", "Shubham Chaudhary", "Rafael Soares", "Shir Cohen Gahtan", "Sabrina Johnson", "Arnav Kaul", "Lorenzo Alvisi", "Luis Rodrigues", "Robbert van Renesse"], presenter: "Rafael Soares", project: "GLOG Project", venue: "EuroSys'27", paper: "", photo: "", abstract: "Shared logs are a core building block for distributed systems,\n" +
 					"yet existing designs struggle to simultaneously achieve low\n" +
 					"latency, scalability, and strong consistency. Most provide a\n" +
 					"linearizable append and a sequentially consistent read. Our\n" +
@@ -144,8 +130,26 @@ const SCHEDULE = [
 					"by up to an order of magnitude versus Meerkat, a state-of-\n" +
 					"the-art RDMA KVS, while achieving 58% higher throughput\n" +
 					"and stronger consistency." },
+			{ time: "15:30", title: "TBA", authors: ["TBA"], presenter: "TBA", photo: "", abstract: "" }
+		]
+	},
+	{
+		type: "break",
+		time: "16:00 – 16:30",
+		name: "Coffee break"
+	},
+	{
+		type: "session",
+		time: "16:30 – 18:00",
+		title: "Paper Session 3",
+		chair: "Session Chair",
+		talks: [
+			{ time: "16:30", title: "\"Title TBA\"", authors: ["Nuno Preguiça"], presenter: "Nuno Preguiça", invited: true, link: "#invited" },
+			{ time: "16:50",  title: "TBA", authors: ["TBA"], presenter: "TBA", photo: "", abstract: ""},
 			{ time: "17:10", title: "TBA", authors: ["Rodrigo Rodrigues"], presenter: "Rodrigo Rodrigues", photo: "images/speakers/rodrod.jpg", abstract: "" },
-			{ time: "17:30", title: "TBA", authors: ["TBA"], presenter: "TBA", photo: "", abstract: "" }
+			{ time: "17:30", title: "Aletheia: Automated Detection of Data Integrity Violations in Microservices", authors: ["Mafalda Sofia Ferreira", "João Ferreira Loff", "João Garcia", "Rodrigo Rodrigues"], presenter: "João Garcia", project: "GLOG Project", photo: "images/speakers/garcia.png", abstract: "The decomposition of applications into microservices results in data being stored across heterogeneous systems, with data schemas partitioned and managed by separate services. As the size and complexity of microservice deployments grow, the consistency of data associations at the application level can be overlooked, and it becomes challenging to manually identify data integrity violations.\n" +
+					"\n" +
+					"In this paper, we present a systematic approach for identifying semantic violations in microservice ecosystems, namely operations and service interactions that break data integrity. We formalize these violations by leveraging the Entity-Relationship model and relational algebra to characterize problematic operation patterns across distributed services. We then introduce Aletheia, a static analysis tool that operationalizes this framework, using the static single assignment (SSA) representation to track data flow and a novel abstract call graph to detect integrity violations. We evaluate Aletheia on 7 open-source applications, detecting 46 previously unreported integrity violations, and use production-scale synthetic applications to demonstrate scalability to large call graphs with up to 500 microservices." }
 		]
 	},
 	{
