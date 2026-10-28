@@ -26,6 +26,16 @@
 
 const SCHEDULE = [
 	{
+		type: "break",
+		time: "09:00 – 09:20",
+		name: "Reception"
+	},
+	{
+		type: "break",
+		time: "09:20 – 09:30",
+		name: "Welcome and Overview"
+	},
+	{
 		type: "session",
 		time: "09:30 – 11:00",
 		title: "Paper Session 1",
@@ -64,7 +74,7 @@ const SCHEDULE = [
 					"source and performance costs of the execution abstraction." },
 			{ time: "09:50", title: "Skyler: Static Analysis for Predicting API-Driven Costs in Serverless Applications", authors: ["Bernardo Ribeiro", "Mafalda Ferreira", "José Fragoso Santos", "Rodrigo Bruno", "Nuno Santos"], presenter: "Bernardo Ribeiro", venue: "ASPLOS'26", paper: "https://dl.acm.org/doi/10.1145/3779212.3790221", photo: "", abstract: "Unpredictable costs are a growing concern in serverless computing, where applications rely on cloud APIs with complex tiered pricing models. In many deployments, API calls dominate expenses, and a single overlooked design choice can escalate costs by thousands of dollars. Existing tools fall short: provider calculators need unrealistic manual estimates, and dynamic profilers only work post-deployment.\n" +
 					"We present Skyler, a static analysis framework for pre-deployment cost estimation of API invocations in serverless workflows. Skyler models control flow behavior and pricing semantics to construct symbolic cost expressions using SMT formulas, exposing economic sinks, i.e., code paths where API usage disproportionately impacts cost. This enables developers to identify hotspots and prevent costly architectural errors early. Skyler supports JavaScript-based serverless applications across AWS Lambda, Google Cloud Functions, and Azure Functions, achieving high accuracy (mean absolute percentage error 1% for AWS and Google, 4.5% for Azure)." },
-			{ time: "10:10", title: "Rose: Reproducing External-Fault-Induced Failures in Distributed Systems with Lightweight Instrumentation", authors: ["Sebastião Amaro", "Pedro Fonseca", "Miguel Matos"], presenter: "Sebastião Amaro", venue: "EuroSys'26", paper: "https://dl.acm.org/doi/10.1145/3767295.3803625", photo: "", abstract: "Distributed systems form the backbone of critical infrastructures, yet remain vulnerable to external-fault-induced bugs that manifest only when specific external events occur during specific application states. Existing approaches to reproducing these bugs require fine-grained information about the application, which might not be available in production, and operate within a limited fault model. Rose is a novel approach that collects traces from production and systematically generates fault schedules that reproduce these bugs. By leveraging the insight that external faults are observable through system interfaces, Rose uses lightweight tracing (2.6% overhead) to capture essential application-environment interactions. Then, it identifies the application states when faults must occur to trigger bugs, and generates schedules that consistently reproduce these bugs. Rose reproduced 20 bugs across eight production systems implemented in diverse languages (C, C++, Java, Go, Scala), including widely-used systems such as Zookeeper, MongoDB, and HBase." },
+			{ time: "10:10", title: "Rose: Reproducing External-Fault-Induced Failures in Distributed Systems with Lightweight Instrumentation", authors: ["Sebastião Amaro", "Pedro Fonseca", "Miguel Matos"], presenter: "Sebastião Amaro", venue: "EuroSys'26", paper: "https://dl.acm.org/doi/10.1145/3767295.3803625", photo: "images/speakers/sa-photo.png", abstract: "Distributed systems form the backbone of critical infrastructures, yet remain vulnerable to external-fault-induced bugs that manifest only when specific external events occur during specific application states. Existing approaches to reproducing these bugs require fine-grained information about the application, which might not be available in production, and operate within a limited fault model. Rose is a novel approach that collects traces from production and systematically generates fault schedules that reproduce these bugs. By leveraging the insight that external faults are observable through system interfaces, Rose uses lightweight tracing (2.6% overhead) to capture essential application-environment interactions. Then, it identifies the application states when faults must occur to trigger bugs, and generates schedules that consistently reproduce these bugs. Rose reproduced 20 bugs across eight production systems implemented in diverse languages (C, C++, Java, Go, Scala), including widely-used systems such as Zookeeper, MongoDB, and HBase." },
 			{ time: "10:30", title: "TBA", authors: ["TBA"], presenter: "TBA", photo: "", abstract: "" }
 		]
 	},
@@ -134,7 +144,7 @@ const SCHEDULE = [
 					"by up to an order of magnitude versus Meerkat, a state-of-\n" +
 					"the-art RDMA KVS, while achieving 58% higher throughput\n" +
 					"and stronger consistency." },
-			{ time: "17:10", title: "TBA", authors: ["Rodrigo Rodrigues"], presenter: "Rodrigo Rodrigues", photo: "", abstract: "" },
+			{ time: "17:10", title: "TBA", authors: ["Rodrigo Rodrigues"], presenter: "Rodrigo Rodrigues", photo: "images/speakers/rodrod.jpg", abstract: "" },
 			{ time: "17:30", title: "TBA", authors: ["TBA"], presenter: "TBA", photo: "", abstract: "" }
 		]
 	},
