@@ -365,9 +365,51 @@ a:hover {
 	margin-bottom: 0;
 }
 
+/* Acknowledgments (end of the About section) */
+
+.acknowledgments-title {
+	margin-top: 2em;
+}
+
+.sponsors {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+	margin-top: 2em;
+}
+
+/* Logos share one row and shrink by the same ratio when it is too narrow
+   (flex-shrink is weighted by flex-basis), so their lettering stays matched. */
+.sponsors .sponsor {
+	flex: 0 1 10.5em;
+	min-width: 0;
+	border-bottom: 0;
+}
+
+.sponsors .sponsor img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/* Wide banners (e.g. the Lisboa 2030 / EU funding strip). Its width is set so that
+   the "lisboa" lettering matches the size of the "inesc id" lettering. */
+.sponsors .sponsor-wide {
+	flex-basis: 36.6em;
+}
+
 /* Small screens */
 
 @media screen and (max-width: 736px) {
+
+	.sponsors {
+		flex-wrap: wrap;
+	}
+
+	.sponsors .sponsor-wide {
+		flex-basis: 100%;
+	}
 
 	.lecture-section .lecture {
 		flex-direction: column;
