@@ -34,6 +34,7 @@
 				<li><a href="#about">About</a></li>
 				<li><a href="#location">Location</a></li>
 				<li><a href="#distinguished">Distinguished Lecture</a></li>
+				<li><a href="#invited">Invited Speakers</a></li>
 				<li><a href="#schedule">Schedule</a></li>
 				<li><a href="#speakers">Speakers</a></li>
 			</ul>
@@ -51,15 +52,12 @@
 						</header>
 
 						<p>
-							The <strong>DPSS Workshop</strong> brings together researchers working on
-							[topic area]. Describe the goals of the workshop, the community it serves, and
-							the kind of work presented here.
+							The <strong>DPSS Workshop</strong> brings together researchers working ...
 						</p>
 
 						<p>
 							The program features <b>keynote talks</b>, a <b>distinguished lecture</b>, and
-							<b>paper sessions</b> where authors present their recent work. Add details on the
-							format, the expected audience, registration, and any related events.
+							<b>paper sessions</b> where authors present their recent work.
 						</p>
 					</div>
 				</div>
@@ -88,7 +86,7 @@
 			</section>
 
 			<!-- Distinguished Lecture -->
-			<section id="distinguished" class="main">
+			<section id="distinguished" class="main lecture-section">
 				<div class="spotlight">
 					<div class="content">
 						<header class="major">
@@ -99,20 +97,69 @@
 							<img class="lecture-photo" src="images/speakers/rvr.jpg" alt="Distinguished lecturer" />
 							<div>
 								<span class="lecture-label">Distinguished Lecture</span>
-								<h3 class="lecture-title">"Title of the Distinguished Lecture"</h3>
-								<p class="lecture-speaker"><a href="#">Distinguished Speaker</a></p>
-								<p class="lecture-meta">Affiliation &middot; 14:00 &ndash; 15:00, Main Auditorium</p>
+								<h3 class="lecture-title">Chain Replication Revisited</h3>
+								<p class="lecture-speaker"><a href="https://www.cs.cornell.edu/home/rvr/">Robbert van Renesse</a></p>
+								<p class="lecture-meta">Cornell University &middot; 12:00 &ndash; 13:00, Anfiteatro Abreu Faro</p>
 
 								<h4>Abstract</h4>
 								<p>
-									A few sentences describing the lecture: the problem, why it matters, and
-									what the audience will take away from it.
+									Chain Replication tolerates f crash failures with only f+1 replicas, half of what Paxos needs, and is used in production storage systems such as EBS, Delta and RADOS. This talk revisits Chain Replication twenty years after its introduction. Quorum protocols such as Paxos never need to tell a slow process from a crashed one. Our new protocol, Chain Replication Revisited (CR2), takes the opposite approach: it makes slowness indistinguishable from a crash. Replicas hold leases from a small set of lessors and stop themselves when they can no longer renew them. Lessors keep no persistent state and never communicate, and the only assumption is a bound on clock drift. With failure detection that is guaranteed accurate, the chain can manage its own membership without a consensus service. CR2 also persists updates in parallel rather than one replica at a time and can recover even when every replica crashes (assuming stable storage).
 								</p>
 
 								<h4>Biography</h4>
 								<p>
-									A short biography of the speaker: current position, research interests,
-									and notable distinctions.
+									Robbert van Renesse is a Professor of Computer Science at Cornell University. His research focuses on fault-tolerant and scalable distributed systems. He co-designed chain replication and has worked on systems ranging from Amoeba to Ziplog. He has also co-founded several companies, including Reliable Network Solutions and Exostellar, bringing systems research into practice. He received his Ph.D. from the Vrije Universiteit Amsterdam under Andrew S. Tanenbaum. He is an ACM Fellow and co-editor-in-chief of ACM Transactions on Computer Systems.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Invited Speakers -->
+			<section id="invited" class="main lecture-section">
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>Invited Speakers</h2>
+						</header>
+
+						<div class="lecture">
+							<img class="lecture-photo" src="images/speakers/orlando.jpg" alt="Invited Speaker One" />
+							<div>
+								<span class="lecture-label">Invited Talk</span>
+								<h3 class="lecture-title">Title TBA</h3>
+								<p class="lecture-speaker"><a href="https://jopereira.github.io/">José Orlando Pereira</a></p>
+								<p class="lecture-meta">Universidade do Minho &middot; 14:30 &ndash; 14:50, Location TBA</p>
+
+								<h4>Abstract</h4>
+								<p>
+									TBA
+								</p>
+
+								<h4>Biography</h4>
+								<p>
+									TBA
+								</p>
+							</div>
+						</div>
+
+						<div class="lecture">
+							<img class="lecture-photo" src="images/speakers/placeholder.svg" alt="Invited Speaker Two" />
+							<div>
+								<span class="lecture-label">Invited Talk</span>
+								<h3 class="lecture-title">Title TBA</h3>
+								<p class="lecture-speaker"><a href="https://asc.di.fct.unl.pt/~nmp/">Nuno Preguiça</a></p>
+								<p class="lecture-meta">Universidade NOVA de Lisboa &middot; 16:30 &ndash; 16:50, Location TBA</p>
+
+								<h4>Abstract</h4>
+								<p>
+									TBA
+								</p>
+
+								<h4>Biography</h4>
+								<p>
+									TBA
 								</p>
 							</div>
 						</div>
@@ -139,163 +186,8 @@
 										<th class="schedule-description">Description</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr class="schedule-break">
-										<td class="schedule-time">08:30 &ndash; 09:00</td>
-										<td class="schedule-slot"><span class="slot-name">Registration</span></td>
-										<td class="schedule-description">&ndash;</td>
-									</tr>
-
-									<tr class="schedule-break">
-										<td class="schedule-time">09:00 &ndash; 09:15</td>
-										<td class="schedule-slot"><span class="slot-name">Opening remarks</span></td>
-										<td class="schedule-description">&ndash;</td>
-									</tr>
-
-									<tr class="schedule-keynote">
-										<td class="schedule-time">09:15 &ndash; 10:15</td>
-										<td class="schedule-slot">
-											<img class="speaker-photo" src="images/speakers/placeholder.svg" alt="Keynote Speaker One" />
-											<span class="slot-kind">Keynote</span>
-											<span class="slot-name">Keynote Speaker One</span>
-										</td>
-										<td class="schedule-description">
-											<span class="paper-title">"Title of the First Keynote"</span>
-										</td>
-									</tr>
-
-									<tr class="schedule-session">
-										<td class="schedule-time">10:15 &ndash; 11:15</td>
-										<td class="schedule-slot">
-											<span class="slot-kind">Paper Session 1</span>
-											<span class="slot-name">Session Topic A</span>
-											<span class="slot-chair">Chair: Session Chair</span>
-										</td>
-										<td class="schedule-description">
-											<ul class="paper-list">
-												<li>
-													<span class="paper-time">10:15</span>
-													<span class="paper-title">Title of the First Paper</span>
-													<span class="paper-authors"><span class="presenter">Author One</span>, Author Two, Author Three</span>
-												</li>
-												<li>
-													<span class="paper-time">10:35</span>
-													<span class="paper-title">Title of the Second Paper</span>
-													<span class="paper-authors"><span class="presenter">Author Four</span>, Author Five</span>
-												</li>
-												<li>
-													<span class="paper-time">10:55</span>
-													<span class="paper-title">Title of the Third Paper</span>
-													<span class="paper-authors">Author Six, <span class="presenter">Author Seven</span></span>
-												</li>
-											</ul>
-										</td>
-									</tr>
-
-									<tr class="schedule-break">
-										<td class="schedule-time">11:15 &ndash; 11:45</td>
-										<td class="schedule-slot"><span class="slot-name">Coffee break</span></td>
-										<td class="schedule-description">&ndash;</td>
-									</tr>
-
-									<tr class="schedule-session">
-										<td class="schedule-time">11:45 &ndash; 12:45</td>
-										<td class="schedule-slot">
-											<span class="slot-kind">Paper Session 2</span>
-											<span class="slot-name">Session Topic B</span>
-											<span class="slot-chair">Chair: Session Chair</span>
-										</td>
-										<td class="schedule-description">
-											<ul class="paper-list">
-												<li>
-													<span class="paper-time">11:45</span>
-													<span class="paper-title">Title of the Fourth Paper</span>
-													<span class="paper-authors"><span class="presenter">Author Eight</span>, Author Nine</span>
-												</li>
-												<li>
-													<span class="paper-time">12:05</span>
-													<span class="paper-title">Title of the Fifth Paper</span>
-													<span class="paper-authors"><span class="presenter">Author Ten</span></span>
-												</li>
-												<li>
-													<span class="paper-time">12:25</span>
-													<span class="paper-title">Title of the Sixth Paper</span>
-													<span class="paper-authors">Author Eleven, <span class="presenter">Author Twelve</span>, Author Thirteen</span>
-												</li>
-											</ul>
-										</td>
-									</tr>
-
-									<tr class="schedule-break">
-										<td class="schedule-time">12:45 &ndash; 14:00</td>
-										<td class="schedule-slot"><span class="slot-name">Lunch</span></td>
-										<td class="schedule-description">&ndash;</td>
-									</tr>
-
-									<tr class="schedule-keynote">
-										<td class="schedule-time">14:00 &ndash; 15:00</td>
-										<td class="schedule-slot">
-											<img class="speaker-photo" src="images/speakers/placeholder.svg" alt="Distinguished Speaker" />
-											<span class="slot-kind">Distinguished Lecture</span>
-											<span class="slot-name">Distinguished Speaker</span>
-										</td>
-										<td class="schedule-description">
-											<a href="#distinguished" class="paper-title">"Title of the Distinguished Lecture"</a>
-										</td>
-									</tr>
-
-									<tr class="schedule-break">
-										<td class="schedule-time">15:00 &ndash; 15:30</td>
-										<td class="schedule-slot"><span class="slot-name">Coffee break</span></td>
-										<td class="schedule-description">&ndash;</td>
-									</tr>
-
-									<tr class="schedule-session">
-										<td class="schedule-time">15:30 &ndash; 16:30</td>
-										<td class="schedule-slot">
-											<span class="slot-kind">Paper Session 3</span>
-											<span class="slot-name">Session Topic C</span>
-											<span class="slot-chair">Chair: Session Chair</span>
-										</td>
-										<td class="schedule-description">
-											<ul class="paper-list">
-												<li>
-													<span class="paper-time">15:30</span>
-													<span class="paper-title">Title of the Seventh Paper</span>
-													<span class="paper-authors"><span class="presenter">Author Fourteen</span>, Author Fifteen</span>
-												</li>
-												<li>
-													<span class="paper-time">15:50</span>
-													<span class="paper-title">Title of the Eighth Paper</span>
-													<span class="paper-authors"><span class="presenter">Author Sixteen</span>, Author Seventeen</span>
-												</li>
-												<li>
-													<span class="paper-time">16:10</span>
-													<span class="paper-title">Title of the Ninth Paper</span>
-													<span class="paper-authors"><span class="presenter">Author Eighteen</span></span>
-												</li>
-											</ul>
-										</td>
-									</tr>
-
-									<tr class="schedule-keynote">
-										<td class="schedule-time">16:30 &ndash; 17:30</td>
-										<td class="schedule-slot">
-											<img class="speaker-photo" src="images/speakers/placeholder.svg" alt="Keynote Speaker Two" />
-											<span class="slot-kind">Keynote</span>
-											<span class="slot-name">Keynote Speaker Two</span>
-										</td>
-										<td class="schedule-description">
-											<span class="paper-title">"Title of the Second Keynote"</span>
-										</td>
-									</tr>
-
-									<tr class="schedule-break">
-										<td class="schedule-time">17:30 &ndash; 17:45</td>
-										<td class="schedule-slot"><span class="slot-name">Closing remarks</span></td>
-										<td class="schedule-description">&ndash;</td>
-									</tr>
-								</tbody>
+								<!-- Filled from data/schedule.js -->
+								<tbody id="schedule-body"></tbody>
 							</table>
 						</div>
 					</div>
@@ -310,40 +202,8 @@
 							<h2>Speakers</h2>
 						</header>
 
-						<ul class="speakers-list">
-							<li class="speakers-item">
-								<img class="speaker-photo" src="images/speakers/placeholder.svg" alt="Keynote Speaker One" />
-								<span class="speech-time">Keynote &middot; 09:15</span>
-								<h3 class="speech-title">"Title of the First Keynote"</h3>
-								<p class="speakers-name"><a href="#">Keynote Speaker One</a> &middot; Affiliation</p>
-								<p class="speakers-bio">
-									Short biography of the speaker: current position, research interests and
-									notable contributions.
-								</p>
-							</li>
-
-							<li class="speakers-item">
-								<img class="speaker-photo" src="images/speakers/placeholder.svg" alt="Distinguished Speaker" />
-								<span class="speech-time">Distinguished Lecture &middot; 14:00</span>
-								<h3 class="speech-title">"Title of the Distinguished Lecture"</h3>
-								<p class="speakers-name"><a href="#">Distinguished Speaker</a> &middot; Affiliation</p>
-								<p class="speakers-bio">
-									Short biography of the speaker: current position, research interests and
-									notable contributions.
-								</p>
-							</li>
-
-							<li class="speakers-item">
-								<img class="speaker-photo" src="images/speakers/placeholder.svg" alt="Keynote Speaker Two" />
-								<span class="speech-time">Keynote &middot; 16:30</span>
-								<h3 class="speech-title">"Title of the Second Keynote"</h3>
-								<p class="speakers-name"><a href="#">Keynote Speaker Two</a> &middot; Affiliation</p>
-								<p class="speakers-bio">
-									Short biography of the speaker: current position, research interests and
-									notable contributions.
-								</p>
-							</li>
-						</ul>
+						<!-- Filled from data/schedule.js -->
+						<ul class="speakers-list" id="speakers-list"></ul>
 					</div>
 				</div>
 			</section>
@@ -354,7 +214,7 @@
 		<footer id="footer">
 			<section>
 				<h2>Contact</h2>
-				<p>For questions and comments, please contact: <a href="mailto:organizers@example.org">organizers@example.org</a></p>
+				<p>For questions and comments, please contact: <a href="mailto:j.rafael.soares@tecnico.ulisboa.pt">j.rafael.soares@tecnico.ulisboa.pt</a></p>
 			</section>
 			<p class="copyright">Design: <a href="https://html5up.net">HTML5 UP</a>, adapted from the
 				<a href="https://ml4physicalsciences.github.io/">ML4PS workshop</a> website.</p>
@@ -369,6 +229,8 @@
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script src="data/schedule.js"></script>
+	<script src="assets/js/schedule.js"></script>
 </body>
 
 </html>

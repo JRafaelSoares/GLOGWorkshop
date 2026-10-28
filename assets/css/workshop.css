@@ -49,9 +49,9 @@ a:hover {
 	border-radius: 0.25em;
 }
 
-/* Distinguished lecture */
+/* Distinguished lecture and invited speakers */
 
-#distinguished .lecture {
+.lecture-section .lecture {
 	display: flex;
 	gap: 2.5em;
 	align-items: flex-start;
@@ -61,7 +61,7 @@ a:hover {
 	border-left: 6px solid #d9a441;
 }
 
-#distinguished .lecture-photo {
+.lecture-section .lecture-photo {
 	flex: 0 0 13em;
 	width: 13em;
 	height: 13em;
@@ -70,7 +70,7 @@ a:hover {
 	box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.15);
 }
 
-#distinguished .lecture-label {
+.lecture-section .lecture-label {
 	display: inline-block;
 	margin-bottom: 0.75em;
 	padding: 0.2em 0.8em;
@@ -83,33 +83,37 @@ a:hover {
 	text-transform: uppercase;
 }
 
-#distinguished .lecture-title {
+.lecture-section .lecture-title {
 	margin-bottom: 0.4em;
 	font-size: 1.6em;
 	line-height: 1.3;
 }
 
-#distinguished .lecture-speaker {
+.lecture-section .lecture-speaker {
 	margin-bottom: 0.25em;
 	font-size: 1.15em;
 	font-weight: 700;
 	color: #4a4a4a;
 }
 
-#distinguished .lecture-meta {
+.lecture-section .lecture-meta {
 	margin-bottom: 1.25em;
 	color: var(--text-muted);
 }
 
-#distinguished .lecture h4 {
+.lecture-section .lecture h4 {
 	margin: 1em 0 0.25em 0;
 	font-size: 0.9em;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 }
 
-#distinguished .lecture p {
+.lecture-section .lecture p {
 	margin-bottom: 0.75em;
+}
+
+.lecture-section .lecture + .lecture {
+	margin-top: 2em;
 }
 
 /* Schedule */
@@ -191,6 +195,15 @@ a:hover {
 	background-color: var(--session);
 }
 
+.schedule-tbl tr.schedule-distinguished {
+	background-color: var(--keynote);
+	box-shadow: inset 6px 0 0 #d9a441;
+}
+
+.schedule-tbl tr.schedule-distinguished .slot-kind {
+	color: #b5832a;
+}
+
 /* Papers inside a session slot */
 
 .paper-list {
@@ -227,6 +240,29 @@ a:hover {
 	color: #4a4a4a;
 }
 
+.paper-venue {
+	display: inline-block;
+	margin-left: 0.5em;
+	padding: 0.05em 0.6em;
+	border-radius: 1em;
+	background-color: var(--session);
+	color: var(--accent-dark);
+	font-size: 0.7em;
+	font-weight: 700;
+	vertical-align: middle;
+}
+
+.paper-link {
+	margin-left: 0.5em;
+	border-bottom: 0;
+	color: var(--accent-dark);
+	vertical-align: middle;
+}
+
+.paper-link:hover {
+	color: #d9a441;
+}
+
 .paper-authors {
 	display: block;
 	font-size: 0.9em;
@@ -234,6 +270,28 @@ a:hover {
 
 .paper-authors .presenter {
 	text-decoration: underline;
+}
+
+.paper-list li.paper-invited {
+	margin: 0 -0.5em;
+	padding: 0.6em 0.5em;
+	border-radius: 0.3em;
+	background-color: var(--keynote);
+	box-shadow: inset 4px 0 0 #d9a441;
+}
+
+.paper-badge {
+	display: inline-block;
+	margin-right: 0.5em;
+	padding: 0.05em 0.6em;
+	border-radius: 1em;
+	background: #d9a441;
+	color: #ffffff;
+	font-size: 0.7em;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	vertical-align: middle;
 }
 
 .paper-links {
@@ -293,6 +351,12 @@ a:hover {
 	color: var(--text-muted);
 }
 
+.speakers-item .speakers-name .presenter {
+	font-weight: 700;
+	color: #4a4a4a;
+	text-decoration: underline;
+}
+
 .speakers-item .speakers-bio {
 	margin-bottom: 0;
 }
@@ -301,14 +365,14 @@ a:hover {
 
 @media screen and (max-width: 736px) {
 
-	#distinguished .lecture {
+	.lecture-section .lecture {
 		flex-direction: column;
 		align-items: center;
 		padding: 1.5em;
 		gap: 1.5em;
 	}
 
-	#distinguished .lecture-photo {
+	.lecture-section .lecture-photo {
 		flex-basis: auto;
 		width: 9em;
 		height: 9em;
