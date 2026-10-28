@@ -1812,10 +1812,7 @@ body {
 
 body {
 	/* background-image: url("images/main_image_deep_field_smacs0723-5mb.jpg"); */
-	background-image: url("images/background.jpg");
-	background-size: 100% auto;
-	background-repeat: repeat-y;
-	background-color: #00000040;
+	background-color: #f3e9dc;
 	color: rgba(255, 255, 255, 0.95);
 }
 

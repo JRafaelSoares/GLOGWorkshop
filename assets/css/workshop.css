@@ -13,6 +13,28 @@
 	--text-muted: #8a8a8a;
 }
 
+/* Text placed directly on the page background */
+
+body {
+	color: #5a3f2c;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b,
+a:hover {
+	color: #4a3424;
+}
+
+#footer a {
+	color: #9a5a2a;
+}
+
 /* Location */
 
 .location-address {
