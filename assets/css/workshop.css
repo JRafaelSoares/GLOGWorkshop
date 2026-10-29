@@ -50,6 +50,102 @@ a:hover {
 	border-radius: 0.25em;
 }
 
+/* Workshop dinner (the map reuses .location-map) */
+
+.dinner-meta {
+	margin-bottom: 0.75em;
+	color: var(--text-muted);
+}
+
+.dinner-note {
+	padding: 1em 1.5em;
+	border-radius: 0.5em;
+	background-color: var(--keynote);
+	border-left: 6px solid #d9a441;
+}
+
+.dinner-photos {
+	display: flex;
+	gap: 1.5em;
+}
+
+/* width: 100% lets the photos shrink below their natural 1000px width;
+   otherwise they push the section wider than the white page area. */
+.dinner-photos img {
+	flex: 1 1 0;
+	width: 100%;
+	min-width: 0;
+	aspect-ratio: 3 / 2;
+	object-fit: cover;
+	border-radius: 0.5em;
+}
+
+.dinner-menu-title {
+	margin-top: 2em;
+}
+
+.dinner-map {
+	margin-top: 2em;
+}
+
+.dinner-menu {
+	display: flex;
+	gap: 1.5em;
+}
+
+.dinner-course {
+	flex: 1 1 0;
+	padding: 1.25em 1.5em;
+	border-radius: 0.5em;
+	background: linear-gradient(135deg, #fbf3e2 0%, #eef5fb 100%);
+	border-top: 4px solid #d9a441;
+}
+
+.dinner-course h4 {
+	margin-bottom: 0.5em;
+	font-size: 0.9em;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.dinner-dishes {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.dinner-dishes li {
+	padding: 0 0 0.75em 0;
+	line-height: 1.5;
+}
+
+.dinner-dishes li:last-child {
+	padding-bottom: 0;
+}
+
+.dinner-dishes strong {
+	display: block;
+}
+
+.dish-tag {
+	display: inline-block;
+	margin-left: 0.25em;
+	padding: 0.05em 0.6em;
+	border-radius: 1em;
+	background-color: var(--project);
+	color: #5a9e6f;
+	font-size: 0.7em;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+
+.dinner-price {
+	margin: 1.5em 0 0 0;
+	text-align: center;
+}
+
 /* Distinguished lecture and invited speakers */
 
 .lecture-section .lecture {
@@ -490,5 +586,16 @@ a:hover {
 
 	.location-map {
 		height: 280px;
+	}
+
+	.dinner-menu,
+	.dinner-photos {
+		flex-direction: column;
+		gap: 1em;
+	}
+
+	.dinner-photos img {
+		flex: none;
+		width: 100%;
 	}
 }
