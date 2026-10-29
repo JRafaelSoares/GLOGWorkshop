@@ -54,7 +54,10 @@
 	function breakDetails(slot) {
 		if (!slot.location && !slot.note)
 			return '&ndash;';
-		return (slot.location ? '<span class="break-location">' + esc(slot.location) + '</span>' : '')
+		var location = slot.link
+			? '<a href="' + esc(slot.link) + '">' + esc(slot.location) + '</a>'
+			: esc(slot.location);
+		return (slot.location ? '<span class="break-location">' + location + '</span>' : '')
 			+ (slot.note ? '<span class="break-note">' + esc(slot.note) + '</span>' : '');
 	}
 

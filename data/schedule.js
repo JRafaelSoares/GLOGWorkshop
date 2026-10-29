@@ -3,7 +3,7 @@
 	assets/js/schedule.js turns it into HTML.
 
 	Each slot has a "type":
-	  - "break":         breaks, lunch, dinner etc. Fields: time, name, location (optional), note (optional)
+	  - "break":         breaks, lunch, dinner etc. Fields: time, name, location (optional), link (optional, makes the location clickable), note (optional)
 	  - "session":       a paper session.           Fields: time, title, chair, talks
 	  - "distinguished": the distinguished lecture. Fields: time, speaker, title, photo, link
 
@@ -160,7 +160,7 @@ const SCHEDULE = [
 		type: "break",
 		time: "20:00",
 		name: "Dinner",
-		location: "Location TBA",
-		note: "Dinner is not included: each participant pays for their own meal."
+		location: "Mezze Restaurant",
+		link: "#dinner"
 	}
 ];
