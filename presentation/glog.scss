@@ -1,0 +1,334 @@
+/*
+	Reveal.js theme for the GLOG Workshop slides, matching the website
+	(assets/css/main.css and assets/css/workshop.css).
+*/
+
+/*-- scss:defaults --*/
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+$body-bg: #f3e9dc;
+$body-color: #5a3f2c;
+$link-color: #9a5a2a;
+$presentation-heading-color: #4a3424;
+$font-family-sans-serif: "Open Sans", "Source Sans Pro", Helvetica, sans-serif;
+$presentation-font-size-root: 34px;
+$presentation-heading-font-weight: 700;
+$presentation-h2-font-size: 1.5em;
+
+$gold: #d9a441;
+$cream: #fbf3e2;
+$sky: #eef5fb;
+$muted: #8a8a8a;
+
+/*-- scss:rules --*/
+
+/* White page area on the cream background, as in the website's #main */
+.reveal .slides > section:not(.cover),
+.reveal .slides > .pdf-page > section:not(.cover) {
+	box-sizing: border-box;
+	padding: 1.2em 1.5em !important;
+	background-color: #ffffff;
+	border-radius: 0.4em;
+	box-shadow: 0 0.5em 1.5em rgba(74, 52, 36, 0.08);
+	height: 100% !important;
+}
+
+/* In PDF export each slide sits on a 1280x720 page with a top offset; keep the same margin at the bottom */
+.reveal .slides > .pdf-page > section:not(.cover) {
+	height: 722px !important;
+}
+
+/* Headings with the website's .major underline */
+.reveal h2 {
+	display: inline-block;
+	margin-bottom: 0.9em;
+	padding-bottom: 0.2em;
+	border-bottom: 3px solid $gold;
+}
+
+.reveal strong {
+	color: #4a3424;
+}
+
+/* Title slide */
+
+.reveal .cover {
+	text-align: center;
+}
+
+.reveal .cover h2 {
+	display: block;
+	margin-bottom: 0.2em;
+	padding-bottom: 0;
+	border-bottom: 0;
+	font-size: 2.6em;
+}
+
+.reveal .cover .subtitle {
+	display: block;
+	color: #5a3f2c;
+	font-size: 1.1em;
+}
+
+.reveal .cover .date {
+	font-size: 1.1em;
+	font-weight: 700;
+	color: #4a3424;
+}
+
+.title-location {
+	color: $muted;
+	font-size: 0.8em;
+}
+
+.title-sponsors {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5em;
+	margin-top: 2.5em;
+}
+
+.reveal .title-sponsors img {
+	height: 2.2em;
+	margin: 0;
+}
+
+/* Lecture cards (distinguished lecture and invited speakers) */
+
+.lecture {
+	display: flex;
+	gap: 1.2em;
+	align-items: center;
+	padding: 1em 1.2em;
+	border-radius: 0.4em;
+	background: linear-gradient(135deg, $cream 0%, $sky 100%);
+	border-left: 6px solid $gold;
+	text-align: left;
+}
+
+.reveal .lecture img {
+	flex: 0 0 auto;
+	width: 7em;
+	height: 7em;
+	margin: 0;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: 50% 15%;
+	box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.15);
+}
+
+.lecture-label {
+	display: inline-block;
+	margin-bottom: 0.5em;
+	padding: 0.15em 0.8em;
+	border-radius: 1em;
+	background: $gold;
+	color: #ffffff;
+	font-size: 0.5em;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.reveal .lecture-title {
+	margin: 0 0 0.3em 0;
+	font-size: 1.3em;
+}
+
+.lecture-speaker {
+	font-size: 0.9em;
+	font-weight: 700;
+	color: #4a4a4a;
+}
+
+.lecture-meta {
+	color: $muted;
+	font-size: 0.7em;
+}
+
+.reveal .lecture-big img {
+	width: 9em;
+	height: 9em;
+}
+
+.reveal .lecture-big .lecture-title {
+	font-size: 1.7em;
+}
+
+.reveal .lecture p,
+.reveal .lecture figure,
+.reveal .speakers p,
+.reveal .speakers figure,
+.reveal .qr-code p,
+.reveal .qr-code figure,
+.reveal .dinner figure {
+	margin: 0;
+}
+
+.reveal .lecture figcaption,
+.reveal .speakers figcaption,
+.reveal .qr-code figcaption,
+.reveal .dinner figcaption {
+	display: none;
+}
+
+/* Keep the round photos from being squeezed by the flex layout */
+.lecture > *:has(img) {
+	flex: 0 0 auto;
+}
+
+.reveal .lecture img,
+.reveal .speakers img {
+	max-width: none;
+	max-height: none;
+	aspect-ratio: 1;
+}
+
+/* Invited speakers side by side */
+
+.invited {
+	display: flex;
+	gap: 1em;
+}
+
+.invited .lecture {
+	flex: 1 1 0;
+	flex-direction: column;
+	gap: 0.4em;
+	text-align: center;
+	padding: 1em;
+}
+
+/* Speakers grid */
+
+.speakers {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 0.6em 0.8em;
+	text-align: center;
+}
+
+.reveal .speakers img {
+	display: block;
+	width: 3.6em;
+	height: 3.6em;
+	margin: 0 auto 0.2em auto;
+	border-radius: 50%;
+	object-fit: cover;
+	box-shadow: 0 0.3em 0.8em rgba(0, 0, 0, 0.12);
+}
+
+.speaker-name {
+	display: block;
+	font-size: 0.55em;
+	font-weight: 700;
+	color: #4a4a4a;
+	line-height: 1.2;
+}
+
+.speaker-venue {
+	display: inline-block;
+	margin-top: 0.3em;
+	padding: 0.05em 0.6em;
+	border-radius: 1em;
+	background-color: #e3eef7;
+	color: #3b7fb0;
+	font-size: 0.4em;
+	font-weight: 700;
+}
+
+/* Dinner */
+
+.dinner {
+	display: flex;
+	gap: 1.2em;
+	align-items: stretch;
+}
+
+.dinner-info {
+	flex: 1.1 1 0;
+}
+
+.dinner-photo {
+	flex: 1 1 0;
+}
+
+.reveal .dinner img {
+	width: 100%;
+	height: 13em;
+	margin: 0;
+	border-radius: 0.4em;
+	object-fit: cover;
+}
+
+.dinner-meta {
+	color: $muted;
+	font-size: 0.7em;
+}
+
+.dinner-name {
+	display: block;
+	font-size: 1.6em;
+	font-weight: 700;
+	line-height: 1.2;
+	color: #4a3424;
+}
+
+.dinner-note {
+	margin-top: 0.8em;
+	padding: 0.6em 0.9em;
+	border-radius: 0.4em;
+	background-color: #f6e7c8;
+	border-left: 6px solid $gold;
+	font-size: 0.65em;
+	line-height: 1.45;
+}
+
+.dinner-note .warn {
+	display: block;
+	margin-bottom: 0.3em;
+	color: #b5832a;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+/* QR codes */
+
+.qr-codes {
+	display: flex;
+	justify-content: center;
+	gap: 3em;
+	text-align: center;
+}
+
+.qr-code {
+	padding: 0.8em 1em;
+	border-radius: 0.4em;
+	background: linear-gradient(135deg, $cream 0%, $sky 100%);
+	border-top: 4px solid $gold;
+}
+
+.reveal .qr-code img {
+	display: block;
+	width: 8.5em;
+	height: 8.5em;
+	margin: 0;
+	background: #ffffff;
+}
+
+.qr-label {
+	display: block;
+	margin-top: 0.3em;
+	font-size: 0.8em;
+	font-weight: 700;
+	color: #4a3424;
+}
+
+.qr-url {
+	display: block;
+	font-size: 0.45em;
+	color: $muted;
+}
