@@ -115,7 +115,24 @@ const SCHEDULE = [
 					"We propose FUR, a new design for PHT that eliminates the two most crucial bottlenecks that hinder RO transactions in state-of-the-art PHT. At its core, FUR exploits advanced instructions that some contemporary HTMs provide to suspend (and resume) transactional access tracking.\n" +
 					"With the exception of workloads comprised of 100% update transactions, our experimental evaluation with an IBM POWER9 system using the TPC-C benchmark shows that FUR can outperform the state of the art designs for persistent hardware (SPHT) and software memory transactions (Pisces or SpecPMT-based) by up to 6.17×."
 				},
-			{ time: "15:30",  title: "Linearizable Shared Log API Considered Harmful", authors: ["Yu-Ju Huang", "Shubham Chaudhary", "Rafael Soares", "Shir Cohen Gahtan", "Sabrina Johnson", "Arnav Kaul", "Lorenzo Alvisi", "Luis Rodrigues", "Robbert van Renesse"], presenter: "Rafael Soares", project: "GLOG Project", venue: "EuroSys'27", paper: "", photo: "images/speakers/rasoares.jpeg", abstract: "Shared logs are a core building block for distributed systems,\n" +
+			{ time: "15:30", title: "Accelerating Transactional Execution via Processing-In-Memory", authors: ["André Lopes", "Daniel Castro", "Paolo Romano"], presenter: "André Lopes", project: "GLOG Project", venue: "EuroSys'26", paper: "https://dl.acm.org/doi/abs/10.1145/3767295.3803621", photo: "", abstract: "Processing-in-Memory (PIM) integrates compute capabilities directly into memory modules to reduce costly data movement, promising large performance gains for data-intensive workloads. In PIM systems, small processors—Data Processing Units (DPUs)—are embedded near memory banks to execute computations close to where data resides. Although PIM has shown strong benefits for analytical tasks, supporting transactional workloads such as online transaction processing (OLTP) remains challenging due to decentralized DPUs and the lack of efficient hardware coordination mechanisms.\n" +
+					"We present PIM-TIDE (Processing-in-Memory with Transactional Isolation via Deterministic Execution), a new transaction execution platform designed for PIM architectures. PIM-TIDE provides a lightweight software-based coordination mechanism that enables transactions to span multiple DPUs, while ensuring consistency, atomicity, and isolation. By using the CPU selectively for transaction coordination, PIM-TIDE avoids the performance penalties of frequent inter-DPU communication. We evaluate PIM-TIDE on real PIM hardware (UPMEM) and show that it achieves scalable transaction processing with low overhead, both in terms of performance and energy efficiency, in TPC-C based workloads."  }
+		]
+	},
+	{
+		type: "break",
+		time: "16:00 – 16:30",
+		name: "Coffee break"
+	},
+	{
+		type: "session",
+		time: "16:30 – 18:00",
+		title: "Paper Session 3",
+		chair: "Session Chair",
+		talks: [
+			{ time: "16:30", title: "\"Title TBA\"", authors: ["Nuno Preguiça"], presenter: "Nuno Preguiça", invited: true, link: "#invited" },
+			{ time: "16:50",  title: "Narrowing the Expert-Automation Gap for Cross-Platform Network Function Offloading", authors: ["Francisco Pereira", "Hugo Sadok", "João Romeiras Amado", "Ruben Martins", "Fernando Ramos", "Justine Sherry", "Luis Pedrosa"], presenter: "Luis Pedrosa", venue: "", paper: "", photo: "images/speakers/pedrosa.jpeg", abstract: "Offloading Network Functions (NFs) to hardware accelerators allows them to reach higher throughputs under lower power consumption, yet porting NFs to these targets remains notoriously difficult. Existing automated compilers still lag behind expert-crafted solutions. We argue that this gap arises because expert developers reason over a much richer design space than current automatic compilers—jointly considering functional partitioning, data structure selection, and parameter tuning. We propose Synapse, the first NF offloading compiler to jointly reason about these multiple dimensions. Unlike prior tools that severely restrict the design space, Synapse explores a vastly wider space using simple heuristics guided by a fast analytical performance model. Synapse consistently generates solutions comparable to expert-crafted ones, increasing throughput by 3 orders of magnitude compared to state-of-the-art compilers by successfully finding more offloading solutions."},
+			{ time: "17:10", title: "Linearizable Shared Log API Considered Harmful", authors: ["Yu-Ju Huang", "Shubham Chaudhary", "Rafael Soares", "Shir Cohen Gahtan", "Sabrina Johnson", "Arnav Kaul", "Lorenzo Alvisi", "Luis Rodrigues", "Robbert van Renesse"], presenter: "Rafael Soares", project: "GLOG Project", venue: "EuroSys'27", paper: "", photo: "images/speakers/rasoares.jpeg", abstract: "Shared logs are a core building block for distributed systems,\n" +
 					"yet existing designs struggle to simultaneously achieve low\n" +
 					"latency, scalability, and strong consistency. Most provide a\n" +
 					"linearizable append and a sequentially consistent read. Our\n" +
@@ -136,24 +153,7 @@ const SCHEDULE = [
 					"serializability. Under contention, Zipkvs reduces tail latency\n" +
 					"by up to an order of magnitude versus Meerkat, a state-of-\n" +
 					"the-art RDMA KVS, while achieving 58% higher throughput\n" +
-					"and stronger consistency."  }
-		]
-	},
-	{
-		type: "break",
-		time: "16:00 – 16:30",
-		name: "Coffee break"
-	},
-	{
-		type: "session",
-		time: "16:30 – 18:00",
-		title: "Paper Session 3",
-		chair: "Session Chair",
-		talks: [
-			{ time: "16:30", title: "\"Title TBA\"", authors: ["Nuno Preguiça"], presenter: "Nuno Preguiça", invited: true, link: "#invited" },
-			{ time: "16:50",  title: "Narrowing the Expert-Automation Gap for Cross-Platform Network Function Offloading", authors: ["Francisco Pereira", "Hugo Sadok", "João Romeiras Amado", "Ruben Martins", "Fernando Ramos", "Justine Sherry", "Luis Pedrosa"], presenter: "Luis Pedrosa", venue: "", paper: "", photo: "images/speakers/pedrosa.jpeg", abstract: "Offloading Network Functions (NFs) to hardware accelerators allows them to reach higher throughputs under lower power consumption, yet porting NFs to these targets remains notoriously difficult. Existing automated compilers still lag behind expert-crafted solutions. We argue that this gap arises because expert developers reason over a much richer design space than current automatic compilers—jointly considering functional partitioning, data structure selection, and parameter tuning. We propose Synapse, the first NF offloading compiler to jointly reason about these multiple dimensions. Unlike prior tools that severely restrict the design space, Synapse explores a vastly wider space using simple heuristics guided by a fast analytical performance model. Synapse consistently generates solutions comparable to expert-crafted ones, increasing throughput by 3 orders of magnitude compared to state-of-the-art compilers by successfully finding more offloading solutions."},
-			{ time: "17:10", title: "Accelerating Transactional Execution via Processing-In-Memory", authors: ["André Lopes", "Daniel Castro", "Paolo Romano"], presenter: "André Lopes", project: "GLOG Project", venue: "EuroSys'26", paper: "https://dl.acm.org/doi/abs/10.1145/3767295.3803621", photo: "", abstract: "Processing-in-Memory (PIM) integrates compute capabilities directly into memory modules to reduce costly data movement, promising large performance gains for data-intensive workloads. In PIM systems, small processors—Data Processing Units (DPUs)—are embedded near memory banks to execute computations close to where data resides. Although PIM has shown strong benefits for analytical tasks, supporting transactional workloads such as online transaction processing (OLTP) remains challenging due to decentralized DPUs and the lack of efficient hardware coordination mechanisms.\n" +
-					"We present PIM-TIDE (Processing-in-Memory with Transactional Isolation via Deterministic Execution), a new transaction execution platform designed for PIM architectures. PIM-TIDE provides a lightweight software-based coordination mechanism that enables transactions to span multiple DPUs, while ensuring consistency, atomicity, and isolation. By using the CPU selectively for transaction coordination, PIM-TIDE avoids the performance penalties of frequent inter-DPU communication. We evaluate PIM-TIDE on real PIM hardware (UPMEM) and show that it achieves scalable transaction processing with low overhead, both in terms of performance and energy efficiency, in TPC-C based workloads." },
+					"and stronger consistency."},
 			{ time: "17:30", title: "TBA", authors: ["TBA"], presenter: "TBA", photo: "", abstract: "" }
 		]
 	},
