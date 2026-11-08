@@ -79,7 +79,28 @@ const SCHEDULE = [
 			{ time: "10:10", title: "Aletheia: Automated Detection of Data Integrity Violations in Microservices", authors: ["Mafalda Sofia Ferreira", "João Ferreira Loff", "João Garcia", "Rodrigo Rodrigues"], presenter: "João Garcia", project: "GLOG Project", venue: "OSDI'26", paper: "https://www.usenix.org/conference/osdi26/presentation/ferreira", photo: "images/speakers/garcia.png", abstract: "The decomposition of applications into microservices results in data being stored across heterogeneous systems, with data schemas partitioned and managed by separate services. As the size and complexity of microservice deployments grow, the consistency of data associations at the application level can be overlooked, and it becomes challenging to manually identify data integrity violations.\n" +
 					"\n" +
 					"In this paper, we present a systematic approach for identifying semantic violations in microservice ecosystems, namely operations and service interactions that break data integrity. We formalize these violations by leveraging the Entity-Relationship model and relational algebra to characterize problematic operation patterns across distributed services. We then introduce Aletheia, a static analysis tool that operationalizes this framework, using the static single assignment (SSA) representation to track data flow and a novel abstract call graph to detect integrity violations. We evaluate Aletheia on 7 open-source applications, detecting 46 previously unreported integrity violations, and use production-scale synthetic applications to demonstrate scalability to large call graphs with up to 500 microservices."  },
-			{ time: "10:30", title: "Title TBA", authors: ["Rodrigo Rodrigues"], presenter: "Rodrigo Rodrigues", photo: "images/speakers/rodrod.jpg", abstract: ""}
+			{ time: "10:30", title: "Linearizable Shared Log API Considered Harmful", authors: ["Yu-Ju Huang", "Shubham Chaudhary", "Rafael Soares", "Shir Cohen Gahtan", "Sabrina Johnson", "Arnav Kaul", "Lorenzo Alvisi", "Luis Rodrigues", "Robbert van Renesse"], presenter: "Rafael Soares", project: "GLOG Project", venue: "EuroSys'27", paper: "", photo: "images/speakers/rasoares.jpeg", abstract: "Shared logs are a core building block for distributed systems,\n" +
+					"yet existing designs struggle to simultaneously achieve low\n" +
+					"latency, scalability, and strong consistency. Most provide a\n" +
+					"linearizable append and a sequentially consistent read. Our\n" +
+					"key insight is that linearizable appends are unnecessary: a\n" +
+					"durable log that provides only total order is sufficient to build\n" +
+					"linearizable applications. Log-level linearizability offers no\n" +
+					"additional semantic benefit but places global synchronization\n" +
+					"directly on the critical path, inflating end-to-end latency.\n" +
+					"Total order needs no such coordination, cutting latency by\n" +
+					"orders of magnitude while retaining scalability.\n" +
+					"We present Ziplog, the first totally ordered shared log\n" +
+					"with no global coordination in its critical path. Ziplog uses\n" +
+					"an off-path ordering service that pre-assigns log positions,\n" +
+					"allowing clients to append without in-flight synchronization\n" +
+					"On RDMA, Ziplog achieves a 99.9 %-tile end-to-end\n" +
+					"latency of just 16 μs. To demonstrate Ziplog’s benefits, we\n" +
+					"build Zipkvs, a transactional key-value store providing strict\n" +
+					"serializability. Under contention, Zipkvs reduces tail latency\n" +
+					"by up to an order of magnitude versus Meerkat, a state-of-\n" +
+					"the-art RDMA KVS, while achieving 58% higher throughput\n" +
+					"and stronger consistency."}
 		]
 	},
 	{
@@ -132,28 +153,9 @@ const SCHEDULE = [
 		talks: [
 			{ time: "16:30", title: "\"Title TBA\"", authors: ["Nuno Preguiça"], presenter: "Nuno Preguiça", invited: true, link: "#invited" },
 			{ time: "16:50",  title: "Narrowing the Expert-Automation Gap for Cross-Platform Network Function Offloading", authors: ["Francisco Pereira", "Hugo Sadok", "João Romeiras Amado", "Ruben Martins", "Fernando Ramos", "Justine Sherry", "Luis Pedrosa"], presenter: "Luis Pedrosa", venue: "", paper: "", photo: "images/speakers/pedrosa.jpeg", abstract: "Offloading Network Functions (NFs) to hardware accelerators allows them to reach higher throughputs under lower power consumption, yet porting NFs to these targets remains notoriously difficult. Existing automated compilers still lag behind expert-crafted solutions. We argue that this gap arises because expert developers reason over a much richer design space than current automatic compilers—jointly considering functional partitioning, data structure selection, and parameter tuning. We propose Synapse, the first NF offloading compiler to jointly reason about these multiple dimensions. Unlike prior tools that severely restrict the design space, Synapse explores a vastly wider space using simple heuristics guided by a fast analytical performance model. Synapse consistently generates solutions comparable to expert-crafted ones, increasing throughput by 3 orders of magnitude compared to state-of-the-art compilers by successfully finding more offloading solutions."},
-			{ time: "17:10", title: "Linearizable Shared Log API Considered Harmful", authors: ["Yu-Ju Huang", "Shubham Chaudhary", "Rafael Soares", "Shir Cohen Gahtan", "Sabrina Johnson", "Arnav Kaul", "Lorenzo Alvisi", "Luis Rodrigues", "Robbert van Renesse"], presenter: "Rafael Soares", project: "GLOG Project", venue: "EuroSys'27", paper: "", photo: "images/speakers/rasoares.jpeg", abstract: "Shared logs are a core building block for distributed systems,\n" +
-					"yet existing designs struggle to simultaneously achieve low\n" +
-					"latency, scalability, and strong consistency. Most provide a\n" +
-					"linearizable append and a sequentially consistent read. Our\n" +
-					"key insight is that linearizable appends are unnecessary: a\n" +
-					"durable log that provides only total order is sufficient to build\n" +
-					"linearizable applications. Log-level linearizability offers no\n" +
-					"additional semantic benefit but places global synchronization\n" +
-					"directly on the critical path, inflating end-to-end latency.\n" +
-					"Total order needs no such coordination, cutting latency by\n" +
-					"orders of magnitude while retaining scalability.\n" +
-					"We present Ziplog, the first totally ordered shared log\n" +
-					"with no global coordination in its critical path. Ziplog uses\n" +
-					"an off-path ordering service that pre-assigns log positions,\n" +
-					"allowing clients to append without in-flight synchronization\n" +
-					"On RDMA, Ziplog achieves a 99.9 %-tile end-to-end\n" +
-					"latency of just 16 μs. To demonstrate Ziplog’s benefits, we\n" +
-					"build Zipkvs, a transactional key-value store providing strict\n" +
-					"serializability. Under contention, Zipkvs reduces tail latency\n" +
-					"by up to an order of magnitude versus Meerkat, a state-of-\n" +
-					"the-art RDMA KVS, while achieving 58% higher throughput\n" +
-					"and stronger consistency."}
+			{ time: "17:10", title: "Principles and practice of TEE replication (and beyond)", authors: ["Rodrigo Rodrigues"], presenter: "Rodrigo Rodrigues", photo: "images/speakers/rodrod.jpg", abstract: "Trusted Execution Environments (TEEs) ensure the confidentiality and integrity of computations in hardware. Subject to the TEE's threat model, the hardware shields a computation from most externally induced fault behavior except crashes. As a result, a crash-fault tolerant (CFT) replication protocol should be sufficient when replicating trusted code inside TEEs. However, TEEs do not provide efficient and general means of ensuring the freshness of external, persistent state. Therefore, CFT replication is insufficient for TEE computations with external state, as this state could be rolled back to an earlier version when a TEE restarts. Furthermore, using BFT protocols in this setting is too conservative, because these protocols are designed to tolerate arbitrary behavior, not just rollback during a restart.\n" +
+					"\n" +
+					"In this talk, I will present the restart-rollback fault model for replicating TEEs, which precisely captures the possible fault behaviors of TEEs with external state. Then, I will show that existing replication protocols can be easily adapted to this fault model with few changes, while retaining their original performance. In particular, we adapted two widely used crash fault tolerant protocols—the Attiya, Bar-Noy, Dolev read/write register protocol and the Paxos consensus protocol—to the new fault model. Furthermore, we leverage these protocols to build a replicated metadata service called TEEMS, and then show that it can add TEE-grade confidentiality, integrity, and freshness to untrusted cloud storage services. Finally, time permitting, I will preview our ongoing work that highlights the power and generality of this model by applying to conventional replicated storage systems, to address a pending tension between performance and durability guarantees." }
 		]
 	},
 	{
