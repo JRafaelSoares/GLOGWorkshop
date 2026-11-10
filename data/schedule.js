@@ -44,7 +44,7 @@ const SCHEDULE = [
 		chair: "Session Chair",
 		talks: [
 			{ time: "09:30", title: "StageRun: An Execution-Centric Runtime for In-Network Security \n" +
-					"Applications", authors: ["João Verissimo", "Eduard Marin", "Nuno Santos"], presenter: "João Verissimo", venue: "NDSS'27", paper: "", photo: "", abstract: "Programmable switches increasingly enforce security\n" +
+					"Applications", authors: ["João Verissimo", "Eduard Marin", "Nuno Santos"], presenter: "João Verissimo", venue: "NDSS'27", paper: "", photo: "images/speakers/verissimo.jpeg", abstract: "Programmable switches increasingly enforce security\n" +
 					" defenses in the data plane, but evolving defenses require\n" +
 					"\n" +
 					"rapid deployment and extension without recompiling specialized\n" +
