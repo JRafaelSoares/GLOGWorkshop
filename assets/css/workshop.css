@@ -213,6 +213,12 @@ a:hover {
 	margin-bottom: 0.75em;
 }
 
+/* Smaller than the main location map; the extra selector also beats the mobile .location-map height. */
+.lecture-section .lecture-map {
+	height: 220px;
+	margin-top: 1em;
+}
+
 .lecture-section .lecture + .lecture {
 	margin-top: 2em;
 }
